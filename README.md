@@ -15,7 +15,7 @@ This Package relies on ReactiveSwift and OSLogger.
 Installation
 To integrate the package in your application you need to use Swift Package Manager and add NetworkManager as a dependency of your package in Package.swift:
 
-.package(url: "https://github.com/NPasini/NetworkManager.git", from: "1.0.0"),
+.package(url: "https://github.com/Taha2hussein/Networking.git", from: "1.0.0"),
 
 Example
 First thing you have to do is to create the model parsing the response:
