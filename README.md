@@ -20,6 +20,7 @@ To integrate the package in your application you need to use Swift Package Manag
 Example
 First thing you have to do is to create the model parsing the response:
 
+```swift
 struct YourResponse {
     let example: String
     
@@ -32,16 +33,20 @@ extension YourResponse: CustomDecodable {
         return try? JSONDecoder().decode(YourResponse.self, from: data)
     }
 }
+```
 
 Then you have to create your request:
 
+```swift
 class YourRequest: GetRequest<YourResponse> {
     init() {
         super.init(host: "yourhost.com", path: "path", version: "1")
     }
 }
+```
 Finally you have to use the APIPerformer to connect to the endpoint:
 
+```swift
 let subscriptionToEndpoint: SignalProducer<Result<YourResponse, NSError>, NSError> = SignalProducer {
             (observer, lifetime) in
             
@@ -61,3 +66,4 @@ let subscriptionToEndpoint: SignalProducer<Result<YourResponse, NSError>, NSErro
                 subscription.dispose()
       }
 }
+```
