@@ -27,12 +27,12 @@ struct YourResponse {
         self.example = example
     }
 }
-
 extension YourResponse: CustomDecodable {
     static func decode(_ data: Data) -> CustomDecodable? {
         return try? JSONDecoder().decode(YourResponse.self, from: data)
     }
 }
+
 Then you have to create your request:
 
 class YourRequest: GetRequest<YourResponse> {
